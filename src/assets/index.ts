@@ -6,6 +6,8 @@ import web from "./web.png";
 import github from "./github.png";
 import menu from "./menu.svg";
 import close from "./close.svg";
+import blockchain from "./blockchain.png";
+import andrios from "./andrios.png";
 
 import css from "./tech/css.png";
 import docker from "./tech/docker.png";
@@ -20,20 +22,67 @@ import redux from "./tech/redux.png";
 import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
+import angular from "./tech/angular.svg"
+import bitcoin from "./tech/bitcoin.svg"
+import django from "./tech/django.svg"
+import ethereum from "./tech/ethereum.svg"
+import java from "./tech/java.svg"
+import juce from "./tech/juce.svg"
+import mysql from "./tech/mysql.svg"
+import python from "./tech/python.svg"
+import rails from "./tech/rails.svg"
+import ruby from "./tech/ruby.svg"
+import solidity from "./tech/solidity.svg"
+import spring from "./tech/spring.svg"
+import vue from "./tech/vue.svg"
 
-import meta from "./company/meta.png";
-import shopify from "./company/shopify.png";
-import starbucks from "./company/starbucks.png";
-import tesla from "./company/tesla.png";
+import paypal from "./company/paypal.jpeg";
+import sixconnex from "./company/sixconnex.jpeg";
+import bancolombia from "./company/bancolombia.jpeg";
+import labsatoshi from "./company/labsatoshi.jpeg";
+import ambientesinteligentes from "./company/ambientesinteligentes.jpeg";
 
-import carrent from "./carrent.png";
-import jobit from "./jobit.png";
-import tripguide from "./tripguide.png";
+import paypalCryptoImage from "./portfolio/paypalCryptoImage.png";
+import sixConnexImage from "./portfolio/sixConnexImage.png";
+import bancolombiaImage from "./portfolio/bancolombiaImage.png";
+import aaaInsuranceImage from "./portfolio/aaaInsuranceImage.png";
+import eyewalletImage from "./portfolio/eyewalletImage.png";
+import davidWeekleyImage from "./portfolio/davidWeekleyImage.png";
+import ambientesInteligentesImage from "./portfolio/ambientesInteligentesImage.png";
+import labSatoshiImage from "./portfolio/labSatoshiImage.png";
 
 export {
+  paypalCryptoImage,
+  sixConnexImage,
+  bancolombiaImage,
+  aaaInsuranceImage,
+  eyewalletImage,
+  davidWeekleyImage,
+  ambientesInteligentesImage,
+  labSatoshiImage,
+  vue,
+  angular,
+  bitcoin,
+  django,
+  ethereum,
+  java,
+  juce,
+  mysql,
+  python,
+  rails,
+  ruby,
+  solidity,
+  spring,
+  paypal,
+  sixconnex,
+  bancolombia,
+  labsatoshi,
+  ambientesinteligentes,
   logo,
   backend,
   creator,
+  blockchain,
+  andrios,
   mobile,
   web,
   github,
@@ -52,11 +101,4 @@ export {
   tailwind,
   typescript,
   threejs,
-  meta,
-  shopify,
-  starbucks,
-  tesla,
-  carrent,
-  jobit,
-  tripguide,
 };

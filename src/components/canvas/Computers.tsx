@@ -1,29 +1,48 @@
 import React, { Suspense, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
+import { OrbitControls, Preload, useGLTF, useAnimations } from "@react-three/drei";
 
 import CanvasLoader from "../layout/Loader";
 
 const Computers: React.FC<{ isMobile: boolean }> = ({ isMobile }) => {
-  const computer = useGLTF("./desktop_pc/scene.gltf");
+  const { scene, animations } = useGLTF("./ethereum_explode/scene.gltf");
+  const { actions } = useAnimations(animations, scene);
+  const [isForward, setIsForward] = useState(true);
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  const handleClick = () => {
+    if (actions && actions["Animation"] && !isAnimating) {
+      const action = actions["Animation"];
+      action.reset();
+      action.clampWhenFinished = true;
+      action.timeScale = isForward ? 1 : -1;
+      action.play();
+      setIsAnimating(true);
+      action.getMixer().addEventListener("finished", () => {
+        setIsAnimating(false); 
+        setIsForward(!isForward); 
+      });
+    }
+  };
 
   return (
     <mesh>
       <hemisphereLight intensity={0.15} groundColor="black" />
       <spotLight
-        position={[-20, 50, 10]}
+        position={[20, 100, 10]}
         angle={0.12}
-        penumbra={1}
-        intensity={1}
+        penumbra={0}
+        intensity={0}
         castShadow
         shadow-mapSize={1024}
       />
       <pointLight intensity={1} />
       <primitive
-        object={computer.scene}
-        scale={isMobile ? 0.7 : 0.75}
-        position={isMobile ? [0, -3, -2.2] : [0, -4.25, -1.5]}
-        rotation={[-0.01, -0.2, -0.1]}
+        onClick={handleClick}
+        object={scene}
+        scale={isMobile ? 3 : 3}
+        position={isMobile ? [0, 0, 0] : [0, -1, 0]}
+        rotation={[0, 10, 0]}
       />
     </mesh>
   );
